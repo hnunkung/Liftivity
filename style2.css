@@ -69,6 +69,7 @@ ul {
     font-size: 25px;
     color: black;
     max-height: 50vh;
+    padding-top: 3em;
 
 }
 
@@ -381,7 +382,7 @@ nav {
     }
 
     .nav-foot {
-        height: 2.5em;
+        height: 5.5em;
     }
 
     .totalWeight {
