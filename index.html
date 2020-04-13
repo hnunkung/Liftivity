@@ -100,20 +100,16 @@
 
 
 
-    myArr_1 = ["Mac", "iPad", "Goodies"];
-    myArr_2 = [2.3, 1.6, 10];
+    myArr_1 = ["Placeholder",
+        "Mac", "iPad", "Goodies"
+    ];
+    myArr_2 = [0, 2.3, 1.6, 10];
 
-    if (localStorage.getItem("Deleted") == 1) {
-        myArr_1 = [];
-        myArr_2 = [];
-    } else {
-        console.log('There are val in arr');
-    }
+
 
     // localStorage.setItem("firstLoad", 0);
 
     function myFunction() {
-
 
 
         //ยัดเข้าไปใน Array คู่
@@ -216,7 +212,24 @@
     function addItemList() {
         var itemforAdd = document.getElementById("inp-1").value;
         var weigforAdd = document.getElementById("inp-2").value;
+        // if (myArr_1[0] == "Placeholder") {
+        //     myArr_1.splice(0, 1);
+        //     myArr_2.splice(0, 1);
+        //     if (itemforAdd == "") {
+        //         myArr_1.push("Untitled");
+        //     } else {
+        //         myArr_1.push(itemforAdd);
+        //     }
+        //     myArr_2.push(weigforAdd);
 
+        // } else {
+        //     if (itemforAdd == "") {
+        //         myArr_1.push("Untitled");
+        //     } else {
+        //         myArr_1.push(itemforAdd);
+        //     }
+        //     myArr_2.push(weigforAdd);
+        // }
         if (itemforAdd == "") {
             myArr_1.push("Untitled");
         } else {
@@ -280,9 +293,9 @@
         //     child = e.lastElementChild;
         // }
 
-        myArr_2 = [];
-        myArr_1 = [];
-        localStorage.setItem("Deleted", 1);
+        myArr_2 = [0];
+        myArr_1 = ["Placeholder"];
+        // localStorage.setItem("firstLoad", "");
 
         addToLocal();
         location.reload();
