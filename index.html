@@ -6,13 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Liftivity - Make you day LIGTH</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto|Work+Sans:400,600" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Spartan&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="https://kit.fontawesome.com/f4df16a8c3.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 
-<body>
+<body onload="myFunction()">
 
     <div id="container-n">
         <div class="phone">
@@ -64,7 +65,7 @@
                             <div class="input-group-prepend">
                                 <button class="btn btn-secondary btn-add" id="btn-main"
                                     style="border-radius: 20px; margin: 5px; height: 90%; width: 100%;"
-                                    onclick="myFunction()"><i class="fas fa-plus-circle"></i></button>
+                                    onclick="addItemList()"><i class="fas fa-plus-circle"></i></button>
                             </div>
                         </div>
                     </div>
@@ -76,9 +77,9 @@
                         </div>
                         <div class=" btn btn2 d-flex align-items-center" style="font-size: 22px"><i
                                         class="fas fa-chart-area"></i></div>
-                        <div class="btn btn3"><a href="#"></a><i class="fas fa-weight-hanging"></i></a></div>
-                        <div class="btn btn4 d-flex align-items-center" style="font-size: 20px"><i
-                                class="fas fa-user"></i></div>
+                        <div class="btn btn3"><a href="index.html"><i class="fas fa-weight-hanging"></i></a></div>
+                        <div class="btn btn4 d-flex align-items-center" style="font-size: 20px"><a href="preset.html"><i
+                                    class="fas fa-user"></i></a></div>
                         <div class="btn btn5 d-flex align-items-center" style="font-size: 22px" id="btn"><i
                                 class="fas fa-times"></i></div>
                     </div>
@@ -91,34 +92,145 @@
 </body>
 <script>
     let i = 0;
+    var Liftivity_arr = [];
+    var Liftivity_val = [];
+
+    myArr_1 = ["Mac", "iPad", "Goodies"];
+    myArr_2 = [5, 5, 10];
+
+    // localStorage.setItem("firstLoad", 0);
 
     function myFunction() {
-        var node = document.createElement("LI");
-        var texWeig = document.createElement("DIV");
-        var node2 = document.createElement("SPAN");
-        var item = document.getElementById("inp-1").value;
-        var weig = document.getElementById("inp-2").value;
 
-        if (item == "") {
-            var textnode = document.createTextNode(item + `Untitled`);
-        } else {
-            var textnode = document.createTextNode(item);
+
+
+        //ยัดเข้าไปใน Array คู่
+        // Liftivity_arr.push(item);
+        // Liftivity_val.push(weig);
+
+
+        for (let s = 0; s < myArr_1.length; s++) {
+            let itemList = myArr_1[s];
+            let valList = myArr_2[s];
+
+            if (localStorage.getItem("firstLoad") == null) {
+                addToLocal();
+                localStorage.setItem("firstLoad", 1);
+            }
+            savePresets();
+
+            var node = document.createElement("LI");
+            var texWeig = document.createElement("DIV");
+            var node2 = document.createElement("SPAN");
+            var item = document.getElementById("inp-1").value;
+            var weig = document.getElementById("inp-2").value;
+
+            //เช็คค่าว่างและสร้างโนด
+            if (itemList == "") {
+                var textnode = document.createTextNode(itemList + `Untitled`);
+            } else {
+                var textnode = document.createTextNode(itemList);
+            }
+
+
+            node.appendChild(textnode);
+            document.getElementById("myList").appendChild(node);
+            console.log(textnode);
+
+            document.querySelectorAll("li")[s].appendChild(node2).classList.add('pic');
+            var texWeighNode = document.querySelectorAll("li")[s].appendChild(texWeig).innerHTML =
+                `<div class="textWeight">${valList}</div>`;
+            addTotalWeight(valList);
+            document.getElementById('total-w').innerText = totalSum.toFixed(2) + ` kg`;
+
+            weig = 0;
+
+            // for (let s = 0; s < Liftivity_arr.length; s++) {
+            //     let itemList = Liftivity_arr[s];
+            //     console.log(itemList);
+            //     let valList = Liftivity_val[s];
+            //     //เช็คค่าว่าง
+            //     if (itemList == "") {
+            //         var textnode = document.createTextNode(itemList + `Untitled`);
+            //     } else {
+            //         var textnode = document.createTextNode(itemList);
+            //     }
+
+
+            //     node.appendChild(textnode);
+            //     document.getElementById("myList").appendChild(node);
+            //     console.log(textnode);
+
+            //     document.querySelectorAll("li")[s].appendChild(node2).classList.add('pic');
+            //     var texWeighNode = document.querySelectorAll("li")[s].appendChild(texWeig).innerHTML =
+            //         `<div class="textWeight">${valList}</div>`;
+            //     addTotalWeight(weig);
+            //     document.getElementById('total-w').innerText = totalSum.toFixed(2) + ` kg`;
+
+            //     weig = 0;
         }
 
-        node.appendChild(textnode);
-        document.getElementById("myList").appendChild(node);
+
+
+        // node.appendChild(itemList);
+        // document.getElementById("myList").appendChild(node);
         // document.querySelectorAll("li")[i].appendChild(node2).classList.add('pic');
-        document.querySelectorAll("li")[i].appendChild(node2).classList.add('pic');
+        // document.querySelectorAll("li")[i].appendChild(node2).classList.add('pic');
         // document.querySelectorAll("span")[i].innerHTML = `<i class="fas fa-weight-hanging"></i>`;
-        var texWeighNode = document.querySelectorAll("li")[i].appendChild(texWeig).innerHTML =
-            `<div class="textWeight">${weig}</div>`;
-        i++;
-        console.log(i);
-        addTotalWeight(weig);
-        document.getElementById('total-w').innerText = totalSum.toFixed(2) + ` kg`;
+        // var texWeighNode = document.querySelectorAll("li")[i].appendChild(texWeig).innerHTML =
+        //     `<div class="textWeight">${valList}</div>`;
+        // console.log(i);
+
+        // addTotalWeight(weig);
+        // document.getElementById('total-w').innerText = totalSum.toFixed(2) + ` kg`;
         return weig;
     }
     let totalSum = 0;
+
+    function getList() {
+        for (var s = 0; s < Liftivity_arr.length; s++) {
+            var itemList = Liftivity_arr[s];
+            return itemList;
+        }
+
+        for (var g = 0; g < Liftivity_val.length; g++) {
+            var valList = Liftivity_val[g];
+            return valList;
+        }
+
+
+    }
+
+
+    function addItemList() {
+        var itemforAdd = document.getElementById("inp-1").value;
+        var weigforAdd = document.getElementById("inp-2").value;
+
+        if (itemforAdd == "") {
+            myArr_1.push("Untitled");
+        } else {
+            myArr_1.push(itemforAdd);
+        }
+        myArr_2.push(weigforAdd);
+
+        addToLocal();
+        location.reload();
+    }
+
+    var arr = [];
+
+    function savePresets() {
+        Object.keys(localStorage).forEach(function (key) {
+            console.log(localStorage.getItem(key));
+            var a = localStorage.getItem(key);
+            arr[i] = a.split(",");
+            console.log(arr[i]);
+            i++;
+            console.log(i);
+        });
+        myArr_1 = arr[1];
+        myArr_2 = arr[0];
+    }
 
     function addTotalWeight(x) {
         if (totalSum < 999) {
@@ -131,6 +243,20 @@
             document.getElementById('btn-main').disabled = true;
         }
 
+    }
+
+
+    function addToLocal() {
+        // Check browser support
+        if (typeof (Storage) !== "undefined") {
+            // Store
+            localStorage.setItem("Liftivity_49js1AAvsl", myArr_1);
+            localStorage.setItem("Liftivity_gas#VWsa&7", myArr_2);
+            // Retrieve
+            // document.getElementById("result").innerHTML = localStorage.getItem("lastname");
+        } else {
+            document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
+        }
     }
 
     function deleteChild() {
