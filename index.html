@@ -95,8 +95,20 @@
     var Liftivity_arr = [];
     var Liftivity_val = [];
 
+    // myArr_1 = ["Mac", "iPad", "Goodies"];
+    // myArr_2 = [2.3, 1.6, 10];
+
+
+
     myArr_1 = ["Mac", "iPad", "Goodies"];
-    myArr_2 = [5, 5, 10];
+    myArr_2 = [2.3, 1.6, 10];
+
+    if (localStorage.getItem("Deleted") == 1) {
+        myArr_1 = [];
+        myArr_2 = [];
+    } else {
+        console.log('There are val in arr');
+    }
 
     // localStorage.setItem("firstLoad", 0);
 
@@ -107,7 +119,6 @@
         //ยัดเข้าไปใน Array คู่
         // Liftivity_arr.push(item);
         // Liftivity_val.push(weig);
-
 
         for (let s = 0; s < myArr_1.length; s++) {
             let itemList = myArr_1[s];
@@ -135,7 +146,7 @@
 
             node.appendChild(textnode);
             document.getElementById("myList").appendChild(node);
-            console.log(textnode);
+            // console.log(textnode);
 
             document.querySelectorAll("li")[s].appendChild(node2).classList.add('pic');
             var texWeighNode = document.querySelectorAll("li")[s].appendChild(texWeig).innerHTML =
@@ -224,9 +235,9 @@
             console.log(localStorage.getItem(key));
             var a = localStorage.getItem(key);
             arr[i] = a.split(",");
-            console.log(arr[i]);
+            // console.log(arr[i]);
             i++;
-            console.log(i);
+            // console.log(i);
         });
         myArr_1 = arr[1];
         myArr_2 = arr[0];
@@ -260,14 +271,21 @@
     }
 
     function deleteChild() {
-        var e = document.querySelector("ul");
+        // var e = document.querySelector("ul");
 
-        //e.firstElementChild can be used. 
-        var child = e.lastElementChild;
-        while (child) {
-            e.removeChild(child);
-            child = e.lastElementChild;
-        }
+        // //e.firstElementChild can be used. 
+        // var child = e.lastElementChild;
+        // while (child) {
+        //     e.removeChild(child);
+        //     child = e.lastElementChild;
+        // }
+
+        myArr_2 = [];
+        myArr_1 = [];
+        localStorage.setItem("Deleted", 1);
+
+        addToLocal();
+        location.reload();
     }
     var btn = document.getElementById(
         "btn").onclick = function () {
