@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Liftivity - Make you day LIGHT</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto|Work+Sans:400,600"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Spartan&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="style2.css" />
+    <script
+      src="https://kit.fontawesome.com/f4df16a8c3.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <style>
+      body {
+      }
+      input {
+        /* background-color: grey; */
+        font-size: 20px;
+      }
+      #data-display {
+        font-size: 20px;
+      }
+    </style>
+  </head>
+
+  <body onload="getLocation()">
+    <div id="container-n">
+      <div class="phone">
+        <div class="content">
+          <div class="container-1">
+            <div class="bag d-flex justify-content-center">
+              <div class="box">
+                <ul class="item" id="myList"></ul>
+              </div>
+            </div>
+          </div>
+          <div class="nav-foot">
+                    <div class="wrap">
+                        <div class="btn btn1 d-flex align-items-center" style="font-size: 15px">
+                            <a href="#"><i class="fas fa-bell" style="font-size: 35px"></i></a>
+                        </div>
+                        <div class=" btn btn2 d-flex align-items-center" style="font-size: 22px"><i
+                                        class="fas fa-chart-area"></i></div>
+                        <a href="index.html">
+                            <div class="btn btn3"><i class="fas fa-weight-hanging"></i></div>
+                        </a>
+                        <a href="preset.html"></a>
+                        <div class="btn btn4 d-flex align-items-center" style="font-size: 22px"><i
+                                class="fas fa-user"></i></div>
+                        </a>
+                        <div class="btn btn5 d-flex align-items-center" style="font-size: 22px" id="btn"><i
+                                class="fas fa-times"></i></div>
+                    </div>
+                </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    var button = document.querySelector("#btn");
+    var lat = document.querySelector("#input-data-lat");
+    var lon = document.querySelector("#input-data-lon");
+    var txtarea = document.querySelector("#data-display");
+
+    let MyArr = [];
+
+    function getLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition((position) => {
+          console.log(position.coords.latitude, position.coords.longitude);
+          lat = position.coords.latitude;
+          lon = position.coords.longitude;
+          getData();
+        });
+      } else {
+        console.log("geolocation not supported");
+      }
+    }
+
+    function getData() {
+      fetch(
+        "https://api.openweathermap.org/data/2.5/weather?lat=" +
+          lat +
+          "&lon=" +
+          lon +
+          "&appid=a5be9454a3f42b9b59f1d5e7d69a8633"
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+          var nameValue = data["name"];
+          var tempValue = data["main"]["temp"];
+          var desValue = data["weather"][0]["description"];
+
+          tempValue = parseInt(`${tempValue}`) - 273.15;
+
+          MyArr.push(tempValue.toFixed(2));
+          MyArr.push(desValue);
+          console.log(MyArr);
+          showList();
+        });
+    }
+    // .catch((err) => alert("wrong city name"));
+
+    function showList() {
+      for (let s = 0; s < MyArr.length; s++) {
+        //สร้างโหนด
+        var node = document.createElement("LI");
+        var weatherVal = document.createElement("DIV");
+        var node2 = document.createElement("SPAN");
+
+        let itemList = MyArr[s];
+        var textnode = document.createTextNode(itemList);
+
+        node.appendChild(textnode);
+        document.getElementById("myList").appendChild(node);
+        document.querySelectorAll("li")[s].appendChild(node2);
+      }
+    }
+  </script>
+</html>

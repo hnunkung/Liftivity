@@ -410,44 +410,10 @@
 
             weig = 0;
 
-            // for (let s = 0; s < Liftivity_arr.length; s++) {
-            //     let itemList = Liftivity_arr[s];
-            //     console.log(itemList);
-            //     let valList = Liftivity_val[s];
-            //     //เช็คค่าว่าง
-            //     if (itemList == "") {
-            //         var textnode = document.createTextNode(itemList + `Untitled`);
-            //     } else {
-            //         var textnode = document.createTextNode(itemList);
-            //     }
-
-
-            //     node.appendChild(textnode);
-            //     document.getElementById("myList").appendChild(node);
-            //     console.log(textnode);
-
-            //     document.querySelectorAll("li")[s].appendChild(node2).classList.add('pic');
-            //     var texWeighNode = document.querySelectorAll("li")[s].appendChild(texWeig).innerHTML =
-            //         `<div class="textWeight">${valList}</div>`;
-            //     addTotalWeight(weig);
-            //     document.getElementById('total-w').innerText = totalSum.toFixed(2) + ` kg`;
-
-            //     weig = 0;
+    
         }
 
 
-
-        // node.appendChild(itemList);
-        // document.getElementById("myList").appendChild(node);
-        // document.querySelectorAll("li")[i].appendChild(node2).classList.add('pic');
-        // document.querySelectorAll("li")[i].appendChild(node2).classList.add('pic');
-        // document.querySelectorAll("span")[i].innerHTML = `<i class="fas fa-weight-hanging"></i>`;
-        // var texWeighNode = document.querySelectorAll("li")[i].appendChild(texWeig).innerHTML =
-        //     `<div class="textWeight">${valList}</div>`;
-        // console.log(i);
-
-        // addTotalWeight(weig);
-        // document.getElementById('total-w').innerText = totalSum.toFixed(2) + ` kg`;
         return weig;
     }
     let totalSum = 0;
@@ -470,24 +436,7 @@
     function addItemList() {
         var itemforAdd = document.getElementById("inp-1").value;
         var weigforAdd = document.getElementById("inp-2").value;
-        // if (myArr_1[0] == "Placeholder") {
-        //     myArr_1.splice(0, 1);
-        //     myArr_2.splice(0, 1);
-        //     if (itemforAdd == "") {
-        //         myArr_1.push("Untitled");
-        //     } else {
-        //         myArr_1.push(itemforAdd);
-        //     }
-        //     myArr_2.push(weigforAdd);
-
-        // } else {
-        //     if (itemforAdd == "") {
-        //         myArr_1.push("Untitled");
-        //     } else {
-        //         myArr_1.push(itemforAdd);
-        //     }
-        //     myArr_2.push(weigforAdd);
-        // }
+        
         if (itemforAdd == "") {
             myArr_1.push("Untitled");
         } else {
