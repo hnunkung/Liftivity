@@ -48,23 +48,43 @@
             </div>
           </div>
           <div class="nav-foot">
-                    <div class="wrap">
-                        <div class="btn btn1 d-flex align-items-center" style="font-size: 15px">
-                            <a href="#"><i class="fas fa-bell" style="font-size: 35px"></i></a>
-                        </div>
-                        <div class=" btn btn2 d-flex align-items-center" style="font-size: 22px"><i
-                                        class="fas fa-chart-area"></i></div>
-                        <a href="index.html">
-                            <div class="btn btn3"><i class="fas fa-weight-hanging"></i></div>
-                        </a>
-                        <a href="preset.html"></a>
-                        <div class="btn btn4 d-flex align-items-center" style="font-size: 22px"><i
-                                class="fas fa-user"></i></div>
-                        </a>
-                        <div class="btn btn5 d-flex align-items-center" style="font-size: 22px" id="btn"><i
-                                class="fas fa-times"></i></div>
-                    </div>
+            <div class="wrap">
+              <div
+                class="btn btn1 d-flex align-items-center"
+                style="font-size: 15px;"
+              >
+                <a href="#"
+                  ><i class="fas fa-bell" style="font-size: 35px;"></i
+                ></a>
+              </div>
+              <div
+                class="btn btn2 d-flex align-items-center"
+                style="font-size: 22px;"
+              >
+                <i class="fas fa-chart-area"></i>
+              </div>
+              <a href="index.html">
+                <div class="btn btn3">
+                  <i class="fas fa-weight-hanging"></i>
                 </div>
+              </a>
+              <a href="preset.html">
+                <div
+                  class="btn btn4 d-flex align-items-center"
+                  style="font-size: 22px;"
+                >
+                  <i class="fas fa-user"></i>
+                </div>
+              </a>
+              <div
+                class="btn btn5 d-flex align-items-center"
+                style="font-size: 22px;"
+                id="btn"
+              >
+                <i class="fas fa-times"></i>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -119,15 +139,27 @@
       for (let s = 0; s < MyArr.length; s++) {
         //สร้างโหนด
         var node = document.createElement("LI");
-        var weatherVal = document.createElement("DIV");
-        var node2 = document.createElement("SPAN");
+        var nodeDiv = document.createElement("DIV");
+        var nodeSpan = document.createElement("SPAN");
+        var val = 0;
 
         let itemList = MyArr[s];
+        var symbol = `<i class="fas fa-cloud-sun-rain"></i>	&nbsp;&nbsp;`;
+        var symbol_2 = `&nbsp;&nbsp;<i class="fas fa-thermometer-three-quarters"></i>	&nbsp;&nbsp;&nbsp;`;
         var textnode = document.createTextNode(itemList);
+        var iconnode = document.createTextNode(symbol);
 
         node.appendChild(textnode);
+
         document.getElementById("myList").appendChild(node);
-        document.querySelectorAll("li")[s].appendChild(node2);
+        document.querySelectorAll("li")[s].appendChild(nodeSpan);
+        document.querySelectorAll("li")[s].appendChild(nodeDiv);
+        var entryContent = document.querySelectorAll("li")[s];
+        if (s == 1) {
+          entryContent.querySelector("div").innerHTML = symbol;
+        } else {
+          entryContent.querySelector("div").innerHTML = symbol_2;
+        }
       }
     }
   </script>
