@@ -292,7 +292,7 @@
 
     function savePresets() {
       Object.keys(localStorage).forEach(function (key) {
-        console.log(localStorage.getItem(key));
+        // console.log(localStorage.getItem(key));
         var a = localStorage.getItem(key);
         arr[i] = a.split(",");
         // console.log(arr[i]);
@@ -307,7 +307,7 @@
       if (totalSum < 999) {
         let val = parseFloat(x);
         totalSum += val;
-        console.log(totalSum);
+        // console.log(totalSum);
         return totalSum;
       } else {
         return (totalSum = 999);

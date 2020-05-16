@@ -106,7 +106,7 @@
           getData();
         });
       } else {
-        console.log("geolocation not supported");
+        // console.log("geolocation not supported");
       }
     }
 
@@ -120,7 +120,7 @@
       )
         .then((response) => response.json())
         .then((data) => {
-          console.log(data);
+          // console.log(data);
           var nameValue = data["name"];
           var tempValue = data["main"]["temp"];
           var desValue = data["weather"][0]["description"];
@@ -129,7 +129,7 @@
 
           MyArr.push(tempValue.toFixed(2));
           MyArr.push(desValue);
-          console.log(MyArr);
+          // console.log(MyArr);
           showList();
         });
     }

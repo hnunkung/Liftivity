@@ -91,12 +91,12 @@
 
     function showPresets() {
         Object.keys(localStorage).forEach(function (key) {
-            console.log(localStorage.getItem(key));
+            // console.log(localStorage.getItem(key));
             var a = localStorage.getItem(key);
             arr[i] = a.split(",");
-            console.log(arr[i]);
+            // console.log(arr[i]);
             i++;
-            console.log(i);
+            // console.log(i);
         });
         myArr_1 = arr[1];
         myArr_2 = arr[0];
@@ -125,7 +125,7 @@
 
             node.appendChild(textnode);
             document.getElementById("myList").appendChild(node);
-            console.log(textnode);
+            // console.log(textnode);
 
             document.querySelectorAll("li")[s].appendChild(node2);
             var texWeighNode = document.querySelectorAll("li")[s].appendChild(texWeig).innerHTML =
