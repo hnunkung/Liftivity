@@ -409,6 +409,7 @@ nav {
 
   .nav-foot {
     height: 7.5em;
+    margin-top: -8px;
   }
 
   .totalWeight {
