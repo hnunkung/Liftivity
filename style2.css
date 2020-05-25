@@ -83,7 +83,7 @@ ul {
 li {
   width: 87%;
   padding: 0 18px;
-  height: 8vh;
+  height: 20vh !important;
   min-height: 3.25em;
   margin-left: 20px;
   margin-top: 0.65em;
@@ -92,12 +92,14 @@ li {
   align-items: center;
   /* min-width: 6em; */
 
-  box-shadow: 1px 1px 5px #00000019;
-  border-radius: 5px;
+  box-shadow: 2px 2px 20px #00000019;
+  border-radius: 10px;
   justify-content: flex-end;
   flex-flow: row-reverse;
 
-  font-family: "Roboto";
+  /* font-family: "Roboto"; */
+  box-shadow: 2px 5px 20px #e4e4e4, -2px -5px 20px #ffffff;
+
   background-color: rgb(250, 250, 250);
 }
 
@@ -108,16 +110,17 @@ li {
 }
 
 .textWeight {
-  background-color: rgb(0, 111, 152);
+  background-color: rgb(100, 224, 100);
   border-radius: 50px;
   height: auto;
   padding: 6px;
   color: white;
-  font-weight: 900;
+  font-weight: 600;
   font-size: 20px;
+  font-family: "Roboto";
   /* width: 100%; */
-  box-shadow: 1px 0 3px rgba(0, 0, 0, 0.281);
-  min-width: 50px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.18);
+  min-width: 45px;
   text-align: center;
   margin-right: 50px;
 }
@@ -137,6 +140,11 @@ li {
   backdrop-filter: brightness(0.5);
 }
 
+.font-lable-menu {
+  font-size: 8px;
+  color: grey;
+}
+
 .warp-icon {
   backdrop-filter: brightness(0.5);
   width: 100%;
@@ -150,25 +158,11 @@ li {
 .btn2 {
 }
 
-.btn3 {
-  justify-self: center;
-  align-items: center;
-  width: 4em;
-  height: 4em;
-  /* margin-left: calc(100% - 11em); */
-  transform: scale(1.2);
-  margin-top: 5px;
-  border-radius: 7px;
-  /* position: absolute; */
-  background-color: rgb(255, 255, 255);
-  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.09);
-  font-size: 1em;
-}
-
 .btn4 {
 }
 
 .btn5 {
+  flex-flow: column;
 }
 
 .phone {
@@ -241,6 +235,10 @@ nav {
 
 .btn-add {
   height: 100%;
+}
+
+.noti-card {
+  font-size: 40px;
 }
 
 #menuToggle {
@@ -366,7 +364,7 @@ nav {
   }
 
   .nav-foot {
-    height: 4.5em;
+    height: 7.5em;
   }
 
   .totalWeight {

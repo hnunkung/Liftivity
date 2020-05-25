@@ -56,39 +56,57 @@
           </div>
           <div class="nav-foot">
             <div class="wrap">
+              <div class="btn btn3 d-flex" style="margin-top: -5px;">
+                <a href="index.html"
+                  ><i
+                    class="fas fa-weight-hanging"
+                    style="color: grey; font-size: 20px;"
+                  ></i>
+                  <div class="font-lable-menu">Bag</div></a
+                >
+              </div>
               <div
                 class="btn btn1 d-flex align-items-center"
                 style="font-size: 15px;"
               >
-                <a href="#"
-                  ><i class="fas fa-bell" style="font-size: 35px;"></i
-                ></a>
+                <a
+                  href="notification.html"
+                  style="
+                    display: flex;
+                    flex-flow: column;
+                    justify-content: center;
+                    height: 60px;
+                    width: 60px;
+                    position: absolute;
+                    background-color: #f1f1f1;
+                    border-radius: 40px;
+                    box-shadow: inset 5px 5px 8px #c7c7c767,
+                      inset -5px -5px 8px #f5f5f5;
+                  "
+                  ><i
+                    class="fas fa-bell"
+                    style="color: rgb(100, 224, 100);"
+                  ></i>
+                  <div class="font-lable-menu">Weather</div>
+                </a>
               </div>
+
               <div
-                class="btn btn2 d-flex align-items-center"
-                style="font-size: 22px;"
+                class="btn btn4 d-flex align-items-center"
+                style="font-size: 15px;"
               >
-                <i class="fas fa-chart-area"></i>
-              </div>
-              <a href="index.html">
-                <div class="btn btn3">
-                  <i class="fas fa-weight-hanging"></i>
-                </div>
-              </a>
-              <a href="preset.html">
-                <div
-                  class="btn btn4 d-flex align-items-center"
-                  style="font-size: 22px;"
+                <a href="preset.html"
+                  ><i class="fas fa-user" style="color: grey;"></i>
+                  <div class="font-lable-menu">List</div></a
                 >
-                  <i class="fas fa-user"></i>
-                </div>
-              </a>
+              </div>
               <div
                 class="btn btn5 d-flex align-items-center"
-                style="font-size: 22px;"
+                style="font-size: 25px; color: rgb(189, 80, 80);"
                 id="btn"
               >
                 <i class="fas fa-times"></i>
+                <div class="font-lable-menu">Clear Bag</div>
               </div>
             </div>
           </div>
@@ -151,7 +169,7 @@
         var val = 0;
 
         let itemList = MyArr[s];
-        var symbol = `<i class="fas fa-cloud-sun-rain"></i>	&nbsp;&nbsp;`;
+        var symbol = `<i class="fas fa-cloud-sun-rain noti-card"></i>	&nbsp;&nbsp;`;
         var symbol_2 = `&nbsp;&nbsp;<i class="fas fa-thermometer-three-quarters"></i>	&nbsp;&nbsp;&nbsp;`;
         var textnode = document.createTextNode(itemList);
         var iconnode = document.createTextNode(symbol);

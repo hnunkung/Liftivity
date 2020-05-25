@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-   <meta charset="utf-8" />
+  <head>
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
@@ -12,134 +11,148 @@
     <link rel="apple-touch-icon" href="assets/icn-256.png" />
     <meta name="apple-mobile-web-app-title" content="Liftivity" />
     <title>Liftivity - Make you day LIGHT</title>
-    <link href="https://fonts.googleapis.com/css?family=Roboto|Work+Sans:400,600" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Spartan&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="style2.css">
-    <script src="https://kit.fontawesome.com/f4df16a8c3.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-</head>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto|Work+Sans:400,600"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Spartan&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="style2.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="style.css" /> -->
+    <script
+      src="https://kit.fontawesome.com/f4df16a8c3.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+  </head>
 
-<body onload="showPresets()">
-
+  <body onload="showPresets()">
     <div id="container-n">
-        <div class="phone">
-            <div class="content">
-                <div class="container-1">
-                    <div class="bag d-flex justify-content-center">
-                        <div class="box">
-                            <div class="card"></div>
-                            <ul class="item" id="myList">
-                            </ul>
-
-                        </div>
-                    </div>
-
-
-
-
-                    <!-- <nav role="navigation">
-                    <div id="menuToggle">
-                        <input type="checkbox" />
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <ul id="menu">
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">Info</a></li>
-                            <li><a href="#">Contact</a></li>
-                        </ul>
-                    </div>
-                </nav> -->
-                    <!-- <div class="addItem">
-                        <div class="input-group flex-nowrap d-flex align-items-center" style="padding: 0 10px">
-
-                            <input id="inp-1" type="text" class="form-control input" placeholder="your item"
-                                style="border-radius: 20px;" aria-label="Username" aria-describedby="addon-wrapping">
-                            <input id="inp-2" type="number" class="form-control input" placeholder="Weigh(Kg)" value="0"
-                                style="border-radius: 20px; max-width: 30%; margin-left: 5px" aria-label="Username"
-                                aria-describedby="addon-wrapping">
-                            <div class="input-group-prepend">
-                                <button class="btn btn-secondary btn-add" id="btn-main"
-                                    style="border-radius: 20px; margin: 5px; height: 90%; width: 100%;"
-                                    onclick="myFunction()"><i class="fas fa-plus-circle"></i></button>
-                            </div>
-                        </div>
-                    </div> -->
-                </div>
-                <div class="nav-foot">
-                    <div class="wrap">
-                        <div class="btn btn1 d-flex align-items-center" style="font-size: 14px">
-                            <a href="notification.html"><i class="fas fa-bell""></i></a>
-                        </div>
-                        <div class=" btn btn2 d-flex align-items-center" style="font-size: 20px"><i
-                                        class="fas fa-chart-area"></i></div>
-                        <a href="index.html">
-                            <div class="btn btn3"><i class="fas fa-weight-hanging"></i></div>
-                        </a>
-                        <a href="preset.html"></a>
-                        <div class="btn btn4 d-flex align-items-center" style="font-size: 20px"><i
-                                class="fas fa-user"></i></div>
-                        </a>
-                        <div class="btn btn5 d-flex align-items-center" style="font-size: 20px" id="btn"><i
-                                class="fas fa-times"></i></div>
-                    </div>
-                </div>
+      <div class="phone">
+        <div class="content">
+          <div class="container-1">
+            <div class="bag d-flex justify-content-center">
+              <div class="box">
+                <div class="card"></div>
+                <ul class="item" id="myList"></ul>
+              </div>
             </div>
+          </div>
+          <div class="nav-foot">
+            <div class="wrap">
+              <div class="btn btn3 d-flex" style="margin-top: -5px;">
+                <a href="index.html"
+                  ><i
+                    class="fas fa-weight-hanging"
+                    style="color: grey; font-size: 20px;"
+                  ></i>
+                  <div class="font-lable-menu">Bag</div></a
+                >
+              </div>
+              <div
+                class="btn btn1 d-flex align-items-center"
+                style="font-size: 15px;"
+              >
+                <a href="notification.html"
+                  ><i class="fas fa-bell" style="color: grey;"></i>
+                  <div class="font-lable-menu">Weather</div>
+                </a>
+              </div>
 
+              <div
+                class="btn btn4 d-flex align-items-center"
+                style="font-size: 15px;"
+              >
+                <a
+                  href="preset.html"
+                  style="
+                    display: flex;
+                    flex-flow: column;
+                    justify-content: center;
+                    height: 60px;
+                    width: 60px;
+                    position: absolute;
+                    background-color: #f1f1f1;
+                    border-radius: 40px;
+                    box-shadow: inset 5px 5px 8px #c7c7c767,
+                      inset -5px -5px 8px #f5f5f5;
+                  "
+                  ><i
+                    class="fas fa-user"
+                    style="color: rgb(100, 224, 100);"
+                  ></i>
+                  <div class="font-lable-menu">List</div></a
+                >
+              </div>
+              <div
+                class="btn btn5 d-flex align-items-center"
+                style="font-size: 25px; color: rgb(189, 80, 80);"
+                id="btn"
+              >
+                <i class="fas fa-times"></i>
+                <div class="font-lable-menu">Clear Bag</div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-
-</body>
-<script>
+  </body>
+  <script>
     let i = 0;
     var arr = [];
 
     function showPresets() {
-        Object.keys(localStorage).forEach(function (key) {
-            // console.log(localStorage.getItem(key));
-            var a = localStorage.getItem(key);
-            arr[i] = a.split(",");
-            // console.log(arr[i]);
-            i++;
-            // console.log(i);
-        });
-        myArr_1 = arr[1];
-        myArr_2 = arr[0];
+      Object.keys(localStorage).forEach(function (key) {
+        // console.log(localStorage.getItem(key));
+        var a = localStorage.getItem(key);
+        arr[i] = a.split(",");
+        // console.log(arr[i]);
+        i++;
+        // console.log(i);
+      });
+      myArr_1 = arr[1];
+      myArr_2 = arr[0];
 
-        showList();
+      showList();
     }
 
     function showList() {
-        for (let s = 0; s < myArr_1.length; s++) {
-            let itemList = myArr_1[s];
-            let valList = myArr_2[s];
+      for (let s = 0; s < myArr_1.length; s++) {
+        let itemList = myArr_1[s];
+        let valList = myArr_2[s];
 
-            var node = document.createElement("LI");
-            var texWeig = document.createElement("DIV");
-            var node2 = document.createElement("SPAN");
-            // var item = document.getElementById("inp-1").value;
-            // var weig = document.getElementById("inp-2").value;
+        var node = document.createElement("LI");
+        var texWeig = document.createElement("DIV");
+        var node2 = document.createElement("SPAN");
+        // var item = document.getElementById("inp-1").value;
+        // var weig = document.getElementById("inp-2").value;
 
-            //เช็คค่าว่างและสร้างโนด
-            if (itemList == "") {
-                var textnode = document.createTextNode(itemList + `Untitled`);
-            } else {
-                var textnode = document.createTextNode(itemList);
-            }
-
-
-            node.appendChild(textnode);
-            document.getElementById("myList").appendChild(node);
-            // console.log(textnode);
-
-            document.querySelectorAll("li")[s].appendChild(node2);
-            var texWeighNode = document.querySelectorAll("li")[s].appendChild(texWeig).innerHTML =
-                `<div class="textWeight">${valList}</div>`;
+        //เช็คค่าว่างและสร้างโนด
+        if (itemList == "") {
+          var textnode = document.createTextNode(itemList + `Untitled`);
+        } else {
+          var textnode = document.createTextNode(itemList);
         }
+
+        node.appendChild(textnode);
+        document.getElementById("myList").appendChild(node);
+        // console.log(textnode);
+
+        document.querySelectorAll("li")[s].appendChild(node2);
+        var texWeighNode = (document
+          .querySelectorAll("li")
+          [s].appendChild(
+            texWeig
+          ).innerHTML = `<div class="textWeight">${valList}</div>`);
+      }
     }
-</script>
-
-
+  </script>
 </html>
