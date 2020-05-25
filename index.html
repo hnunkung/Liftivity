@@ -3,6 +3,13 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel="shortcut icon" href="assets/fav.ico" />
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/icn-256.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/icn-256.png" />
+    <link rel="apple-touch-icon" href="assets/icn-256.png" />
+    <meta name="apple-mobile-web-app-title" content="Liftivity" />
     <title>Liftivity - Make you day LIGHT</title>
     <link
       href="https://fonts.googleapis.com/css?family=Roboto|Work+Sans:400,600"
@@ -32,38 +39,34 @@
           <div class="container-1">
             <div class="bag d-flex justify-content-center">
               <div class="warp-icon d-flex justify-content-center">
-                <i class="fas fa-luggage-cart"></i>
+                <i
+                  class="fas fa-luggage-cart font-shadow"
+                  style="font-size: 70px; color: rgb(88, 194, 88);"
+                ></i>
               </div>
 
-              <div class="textplace d-flex justify-content-center">
+              <div
+                class="textplace d-flex justify-content-center"
+                style="
+                  margin-bottom: -10px;
+                  margin-top: 20px;
+                  font-size: 18px;
+                  color: rgb(166, 172, 175);
+                "
+              >
                 Your bag weighs
               </div>
               <div
                 id="total-w"
-                class="totalWeight d-flex justify-content-center"
+                class="totalWeight d-flex justify-content-center align-items-start"
               >
                 0
               </div>
             </div>
-            <div class="box">
-              <div class="card"></div>
+            <div class="box d-flex align-items-center">
               <ul class="item" id="myList"></ul>
             </div>
 
-            <!-- <nav role="navigation">
-                    <div id="menuToggle">
-                        <input type="checkbox" />
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <ul id="menu">
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">Info</a></li>
-                            <li><a href="#">Contact</a></li>
-                        </ul>
-                    </div>
-                </nav> -->
             <div class="addItem">
               <div
                 class="input-group flex-nowrap d-flex align-items-center"
@@ -100,7 +103,10 @@
                     "
                     onclick="addItemList()"
                   >
-                    <i class="fas fa-plus-circle"></i>
+                    <i
+                      class="fas fa-plus-circle"
+                      style="text-shadow: 2px 2px 10px #3f3f3f46;"
+                    ></i>
                   </button>
                 </div>
               </div>
@@ -116,7 +122,7 @@
               </div>
               <div
                 class="btn btn2 d-flex align-items-center"
-                style="font-size: 22px;"
+                style="font-size: 25px;"
               >
                 <i class="fas fa-chart-area"></i>
               </div>
@@ -125,13 +131,13 @@
               </div>
               <div
                 class="btn btn4 d-flex align-items-center"
-                style="font-size: 10px;"
+                style="font-size: 15px;"
               >
                 <a href="preset.html"><i class="fas fa-user"></i></a>
               </div>
               <div
                 class="btn btn5 d-flex align-items-center"
-                style="font-size: 20px;"
+                style="font-size: 15px;"
                 id="btn"
               >
                 <i class="fas fa-times"></i>
@@ -142,216 +148,6 @@
       </div>
     </div>
   </body>
-  <script>
-    let i = 0;
-    var Liftivity_arr = [];
-    var Liftivity_val = [];
 
-    // myArr_1 = ["Mac", "iPad", "Goodies"];
-    // myArr_2 = [2.3, 1.6, 10];
-
-    myArr_1 = ["Placeholder", "Mac", "iPad", "Goodies"];
-    myArr_2 = [0, 2.3, 1.6, 10];
-
-    // localStorage.setItem("firstLoad", 0);
-
-    function myFunction() {
-      //ยัดเข้าไปใน Array คู่
-      // Liftivity_arr.push(item);
-      // Liftivity_val.push(weig);
-
-      for (let s = 0; s < myArr_1.length; s++) {
-        let itemList = myArr_1[s];
-        let valList = myArr_2[s];
-
-        if (localStorage.getItem("firstLoad") == null) {
-          addToLocal();
-          localStorage.setItem("firstLoad", 1);
-        }
-        savePresets();
-
-        var node = document.createElement("LI");
-        var texWeig = document.createElement("DIV");
-        var node2 = document.createElement("SPAN");
-        var item = document.getElementById("inp-1").value;
-        var weig = document.getElementById("inp-2").value;
-
-        //เช็คค่าว่างและสร้างโนด
-        if (itemList == "") {
-          var textnode = document.createTextNode(itemList + `Untitled`);
-        } else {
-          var textnode = document.createTextNode(itemList);
-        }
-
-        node.appendChild(textnode);
-        document.getElementById("myList").appendChild(node);
-        // console.log(textnode);
-
-        document
-          .querySelectorAll("li")
-          [s].appendChild(node2)
-          .classList.add("pic");
-        var texWeighNode = (document
-          .querySelectorAll("li")
-          [s].appendChild(
-            texWeig
-          ).innerHTML = `<div class="textWeight">${valList}</div>`);
-        addTotalWeight(valList);
-        document.getElementById("total-w").innerText =
-          totalSum.toFixed(2) + ` kg`;
-
-        weig = 0;
-
-        // for (let s = 0; s < Liftivity_arr.length; s++) {
-        //     let itemList = Liftivity_arr[s];
-        //     console.log(itemList);
-        //     let valList = Liftivity_val[s];
-        //     //เช็คค่าว่าง
-        //     if (itemList == "") {
-        //         var textnode = document.createTextNode(itemList + `Untitled`);
-        //     } else {
-        //         var textnode = document.createTextNode(itemList);
-        //     }
-
-        //     node.appendChild(textnode);
-        //     document.getElementById("myList").appendChild(node);
-        //     console.log(textnode);
-
-        //     document.querySelectorAll("li")[s].appendChild(node2).classList.add('pic');
-        //     var texWeighNode = document.querySelectorAll("li")[s].appendChild(texWeig).innerHTML =
-        //         `<div class="textWeight">${valList}</div>`;
-        //     addTotalWeight(weig);
-        //     document.getElementById('total-w').innerText = totalSum.toFixed(2) + ` kg`;
-
-        //     weig = 0;
-      }
-
-      // node.appendChild(itemList);
-      // document.getElementById("myList").appendChild(node);
-      // document.querySelectorAll("li")[i].appendChild(node2).classList.add('pic');
-      // document.querySelectorAll("li")[i].appendChild(node2).classList.add('pic');
-      // document.querySelectorAll("span")[i].innerHTML = `<i class="fas fa-weight-hanging"></i>`;
-      // var texWeighNode = document.querySelectorAll("li")[i].appendChild(texWeig).innerHTML =
-      //     `<div class="textWeight">${valList}</div>`;
-      // console.log(i);
-
-      // addTotalWeight(weig);
-      // document.getElementById('total-w').innerText = totalSum.toFixed(2) + ` kg`;
-      return weig;
-    }
-    let totalSum = 0;
-
-    function getList() {
-      for (var s = 0; s < Liftivity_arr.length; s++) {
-        var itemList = Liftivity_arr[s];
-        return itemList;
-      }
-
-      for (var g = 0; g < Liftivity_val.length; g++) {
-        var valList = Liftivity_val[g];
-        return valList;
-      }
-    }
-
-    function addItemList() {
-      var itemforAdd = document.getElementById("inp-1").value;
-      var weigforAdd = document.getElementById("inp-2").value;
-      // if (myArr_1[0] == "Placeholder") {
-      //     myArr_1.splice(0, 1);
-      //     myArr_2.splice(0, 1);
-      //     if (itemforAdd == "") {
-      //         myArr_1.push("Untitled");
-      //     } else {
-      //         myArr_1.push(itemforAdd);
-      //     }
-      //     myArr_2.push(weigforAdd);
-
-      // } else {
-      //     if (itemforAdd == "") {
-      //         myArr_1.push("Untitled");
-      //     } else {
-      //         myArr_1.push(itemforAdd);
-      //     }
-      //     myArr_2.push(weigforAdd);
-      // }
-      if (itemforAdd == "") {
-        myArr_1.push("Untitled");
-      } else if (itemforAdd == "clearlo") {
-        localStorage.clear();
-        location.reload();
-      } else {
-        myArr_1.push(itemforAdd);
-      }
-      myArr_2.push(weigforAdd);
-
-      addToLocal();
-      location.reload();
-    }
-
-    var arr = [];
-
-    function savePresets() {
-      Object.keys(localStorage).forEach(function (key) {
-        // console.log(localStorage.getItem(key));
-        var a = localStorage.getItem(key);
-        arr[i] = a.split(",");
-        // console.log(arr[i]);
-        i++;
-        // console.log(i);
-      });
-      myArr_1 = arr[1];
-      myArr_2 = arr[0];
-    }
-
-    function addTotalWeight(x) {
-      if (totalSum < 999) {
-        let val = parseFloat(x);
-        totalSum += val;
-        // console.log(totalSum);
-        return totalSum;
-      } else {
-        return (totalSum = 999);
-        document.getElementById("btn-main").disabled = true;
-      }
-    }
-
-    function addToLocal() {
-      // Check browser support
-      if (typeof Storage !== "undefined") {
-        // Store
-        localStorage.setItem("Liftivity_49js1AAvsl", myArr_1);
-        localStorage.setItem("Liftivity_gas#VWsa&7", myArr_2);
-        // Retrieve
-        // document.getElementById("result").innerHTML = localStorage.getItem("lastname");
-      } else {
-        document.getElementById("result").innerHTML =
-          "Sorry, your browser does not support Web Storage...";
-      }
-    }
-
-    function deleteChild() {
-      // var e = document.querySelector("ul");
-
-      // //e.firstElementChild can be used.
-      // var child = e.lastElementChild;
-      // while (child) {
-      //     e.removeChild(child);
-      //     child = e.lastElementChild;
-      // }
-
-      myArr_2 = [0];
-      myArr_1 = ["Placeholder"];
-      // localStorage.setItem("firstLoad", "");
-
-      addToLocal();
-      location.reload();
-    }
-    var btn = (document.getElementById("btn").onclick = function () {
-      deleteChild();
-      i = 0;
-      totalSum = 0;
-      document.getElementById("total-w").innerText = totalSum + ` kg`;
-    });
-  </script>
-  <!-- `<div class="weig">(${weig})</div>` -->
+  <script src="main_1.js"></script>
 </html>

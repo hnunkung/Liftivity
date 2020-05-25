@@ -62,7 +62,7 @@ ul {
 .item {
   display: flex;
   flex-flow: column nowrap;
-  font-size: 25px;
+  font-size: 20px;
   color: black;
   max-height: 50vh;
   padding-top: 4em;
@@ -114,7 +114,7 @@ li {
   padding: 6px;
   color: white;
   font-weight: 900;
-  font-size: 25px;
+  font-size: 20px;
   /* width: 100%; */
   box-shadow: 1px 0 3px rgba(0, 0, 0, 0.281);
   min-width: 50px;
@@ -236,6 +236,7 @@ nav {
 
 .btn:hover {
   /* background-color: rgb(224, 224, 224); */
+  color: grey;
 }
 
 .btn-add {
